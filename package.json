@@ -1,0 +1,37 @@
+{
+  "name": "firesearch",
+  "description": "FireSearch is a JavaScript package built to easily support text searches in firestore database.",
+  "version": "0.0.1",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "test": "mocha --require ts-node/register test/**/*.ts",
+    "deploy": "tsc && node copy && cd dist && npm publish --access=public"
+  },
+  "dependencies": {},
+  "author": {
+    "name": "Moses Enomongale",
+    "email": "mosesgodson27@gmail.com",
+    "url": "https://embyconcept.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moses270/timestamp-date/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moses270/timestamp-date"
+  },
+  "homepage": "https://embyconcept.com",
+  "keywords": [
+    "firestore",
+    "database",
+    "firestore search",
+    "firestore text search",
+    "elastic search",
+    "firestore elastic search"
+  ],
+  "devDependencies": {
+    "tslib": "^2.0.0"
+  }
+}
