@@ -1,14 +1,18 @@
 {
   "name": "firesearch",
   "description": "FireSearch is a JavaScript package built to easily support text searches in firestore database.",
-  "version": "0.0.1",
+  "version": "0.0.10",
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register test/**/*.ts",
     "deploy": "tsc && node copy && cd dist && npm publish --access=public"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2"
+  },
   "author": {
     "name": "Moses Enomongale",
     "email": "mosesgodson27@gmail.com",
@@ -16,13 +20,13 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Moses270/timestamp-date/issues"
+    "url": "https://github.com/Moses270/firesearch/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Moses270/timestamp-date"
+    "url": "git+https://github.com/Moses270/firesearch.git"
   },
-  "homepage": "https://embyconcept.com",
+  "homepage": "https://github.com/Moses270/firesearch",
   "keywords": [
     "firestore",
     "database",
@@ -31,7 +35,19 @@
     "elastic search",
     "firestore elastic search"
   ],
+  "peerDependencies": {
+    "firebase": "^7.16.1",
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^3.8.0"
+  },
   "devDependencies": {
+    "@types/lodash.clonedeep": "^4.5.6",
+    "@types/lodash.get": "^4.4.6",
+    "@types/lodash.set": "^4.3.6",
+    "firebase": "^7.16.1",
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^3.8.0",
+    "fs-extra": "^9.0.1",
     "tslib": "^2.0.0"
   }
 }

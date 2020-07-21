@@ -1,1 +1,2 @@
-console.log('Get started');
+export * from './setup/setup';
+export * from './models';

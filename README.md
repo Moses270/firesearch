@@ -30,3 +30,8 @@ console.log(doc);
 | Method Name | Params  | Return type | Description                                        |
 |-------------|---------|-------------|----------------------------------------------------|
 | firstMethod     |      Arg1     | void      | Description should be here.|
+
+### NB:
+This package is an easy go-to solution to support simple text search queries in a typical firestore database. Following are some noted limitations of firesearch:
+1. Does not support sorting, ordering in firestore queries
+2. Only supports indexing of JavaScript values that can easily be converted to string. Examples, Date.toString(), Number.toString() etc
