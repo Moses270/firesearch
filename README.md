@@ -1,6 +1,6 @@
 # FireSearch
 
-FireSearch is a JavaScript package built to easily support text searches in firestore database. Built by [EmbyBest Concept](https://embyconcept.com) to assist firebase/firestore developers to search through their data content stored in firestore. It is tested with Node.js and can easily be adapted to other JavaScript-based environments as well.
+FireSearch is a JavaScript package built to easily support text search in firestore database, assisting firebase/firestore developers to search through their data content stored in firestore. It is tested with Node.js and can easily be adapted to other JavaScript-based environments as well.
 
 ## Installation
 Install FireSearch via npm by running the following command: 
@@ -32,6 +32,17 @@ const fireSearch = new FireSearch(admin.firestore(), config);
 functions.firestore.document('<COLLECTION_NAME>/{docId}').onWrite((snap, ctx) => {
     return fireSearch.onWrite(snap, ctx);
 });
+
+// Example document in path <COLLECTION_NAME>/1234567890
+{
+  firstName: 'John',
+  lastName: 'Bob',
+  photo: 'https://s.gravatar.com/avatar/54dc4a11ce3ae10a373a95aa911c9eae',
+  profile: {
+    address: '45 Westend Street, Chester',
+    age: 30
+  }
+}
 ```
 
 ### Search

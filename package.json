@@ -26,14 +26,12 @@
     "type": "git",
     "url": "git+https://github.com/Moses270/firesearch.git"
   },
-  "homepage": "https://github.com/Moses270/firesearch",
+  "homepage": "https://embyconcept.com",
   "keywords": [
     "firestore",
     "database",
     "firestore search",
-    "firestore text search",
-    "elastic search",
-    "firestore elastic search"
+    "firestore text search"
   ],
   "peerDependencies": {
     "firebase": "^7.16.1",
