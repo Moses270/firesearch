@@ -1,6 +1,6 @@
 import { ObjectMap, FireSearchConfig, FireSearchDocument } from '../models/interface';
 import { FireSearchIndexService } from './index.service';
-import { collectionToDocumentName } from './action.service';
+import { collectionToDocumentName, collectionToFireSearchPath, firesearchBaseCollection } from './action.service';
 
 import lSet = require('lodash.set');
 import lGet = require('lodash.get');
@@ -15,7 +15,7 @@ export class DocumentChangeHandler {
     constructor(firestore: FirebaseFirestore.Firestore, config: FireSearchConfig) {
         this.firestore = firestore;
         this.config = config;
-        this.destinationDocName = `__firesearch_/${collectionToDocumentName(config.collectionName)}/indexes`;
+        this.destinationDocName = collectionToFireSearchPath(config.collectionName);
         this.indexService = new FireSearchIndexService();
 
         // updates parent doc
@@ -26,7 +26,7 @@ export class DocumentChangeHandler {
         const doc: ObjectMap<any> = cloneDeep(this.config);
         doc.id = collectionToDocumentName(this.config.collectionName);
 
-        this.firestore.doc(`__firesearch_/${doc.id}`).set(doc).catch();
+        this.firestore.doc(`${firesearchBaseCollection}/${doc.id}`).set(doc).catch();
     }
 
     public onUpsert(doc: ObjectMap<any>, docId: string): Promise<void> {

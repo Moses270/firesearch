@@ -65,7 +65,13 @@ export class FireSearchIndexService {
 
                         for (const token of tokens) {
                             searchSpace += token;
-                            index[searchSpace] = true;
+
+                            const invalid = searchSpace.startsWith('.') || searchSpace.endsWith('.') || searchSpace.indexOf('..') >= 0;
+                            if (invalid) {
+                                break;
+                            } else {
+                                index[searchSpace] = true;
+                            }
                         }
                     } catch (e) { }
                 });

@@ -1,7 +1,7 @@
 {
   "name": "firesearch",
   "description": "FireSearch is a JavaScript package built to easily support text searches in firestore database.",
-  "version": "0.0.10",
+  "version": "0.0.13",
   "main": "index.js",
   "typings": "index.d.ts",
   "scripts": {
