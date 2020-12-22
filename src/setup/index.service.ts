@@ -36,8 +36,8 @@ export class FireSearchIndexService {
             let values: string = property.split('.').reduce((accumulator, currentProperty) => {
                 return accumulator[currentProperty] || {};
             }, data) || '';
-
-            values = values.toString();
+    
+            values = values = typeof values === 'object' ? JSON.stringify(values) : values.toString();
 
             if (typeof values === 'string') {
                 return values.includes(' ') ? [values].concat(values.split(' ')) : [values];
